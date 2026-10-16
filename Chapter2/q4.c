@@ -5,6 +5,7 @@
 int main()
 {
     // sets up the subtotal variable and then takes the user's input via scanf
+    // scanf --> you need to add & in front of the variable so that it could store the input value
     float subtotal = 0;
     printf("Please enter your total: \n");
     scanf("%f", &subtotal);
