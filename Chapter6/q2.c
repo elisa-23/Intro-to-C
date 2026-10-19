@@ -7,30 +7,21 @@ Hint: The classic algorithm for computing the GCD, known as Euclid's algorithm, 
 follows: Let m and n be variables containing the two numbers. If n is 0, then stop: m contains the GCD. Otherwise, compute the remainder when m is divided by n. Copy n into m
 and copy the remainder into n. Then repeat the process, starting with testing whether n is 0. */
 
+#include <stdio.h>
+
 int main(void)
 {
     int m, n, remainder;
-    printf("Enter two integers: \n");
+    printf("Enter two integers:\n");
     scanf("%d %d", &m, &n);
 
-    if (n == 0)
+    while (n != 0)
     {
-        printf("Greatest common divisor: %d\n", m);
+        remainder = m % n;
+        m = n;
+        n = remainder;
     }
-    else if (m == 0)
-    {
-        printf("Greatest common divisor: %d\n", n);
-    }
-    else
-    {
-        // Euclid's algorithm
-        while (n != 0)
-        {
-            remainder = m % n;
-            m = n;
-            n = remainder;
-        }
-        printf("Greatest common divisor: %d\n", m);
-    }
+    printf("Greatest common divisor: %d\n", m);
+
     return 0;
 }
