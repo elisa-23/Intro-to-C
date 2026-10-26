@@ -16,3 +16,11 @@ afterwards, the stack is cleared and the user is prompted to enter another expre
     Enter an RPN expression : g
 
 If the stack overflows, the program will display the message Expression is too complex and terminate.If the stack underflows(because of an expression such as 1 2 ++), the program will display the message Not enough operands in expression and terminate.Hints : Incorporate the stack code from Section 10.2 into your program. Use scanf(" %c", &ch) to read the operators and operands. */
+
+#include <stdio.h>
+
+int main(void)
+{
+
+    return 0;
+}
