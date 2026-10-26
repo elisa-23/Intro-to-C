@@ -31,7 +31,8 @@ int main(void)
         {
             for (int month = 0; month < 12; month++)
             {
-                value[i] += (low_rate + i) / 100.0 * value[i]; // How this works: The interest for each month is calculated by multiplying the current balance (value[i]) by the monthly interest rate ((low_rate + i) / 100.0). This interest is then added to the current balance, effectively compounding the interest monthly.
+                value[i] += (low_rate + i) / 100.0 * value[i];
+                // How this works: The interest for each month is calculated by multiplying the current balance (value[i]) by the monthly interest rate ((low_rate + i) / 100.0). This interest is then added to the current balance, effectively compounding the interest monthly.
             }
             printf("%7.2f     ", value[i]);
         }
