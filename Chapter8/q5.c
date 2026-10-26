@@ -19,7 +19,7 @@ int main(void)
     printf("\nYears");
     for (i = 0; i < NUM_RATES; i++)
     {
-        printf("%6d%%", low_rate + i);
+        printf("%6d%%     ", low_rate + i);
         value[i] = INITIAL_BALANCE;
     }
     printf("\n");
@@ -29,8 +29,11 @@ int main(void)
         printf("%3d     ", year);
         for (i = 0; i < NUM_RATES; i++)
         {
-            value[i] += (low_rate + i) / 100.0 * value[i];
-            printf("%7.2f", value[i]);
+            for (int month = 0; month < 12; month++)
+            {
+                value[i] += (low_rate + i) / 100.0 * value[i]; // How this works: The interest for each month is calculated by multiplying the current balance (value[i]) by the monthly interest rate ((low_rate + i) / 100.0). This interest is then added to the current balance, effectively compounding the interest monthly.
+            }
+            printf("%7.2f     ", value[i]);
         }
         printf("\n");
     }
