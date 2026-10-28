@@ -25,7 +25,7 @@ int top = 0;
 
 void push(int value) // Pushes a value onto the stack
 {
-    if (top >= MAX_STACK_SIZE - 1)
+    if (top >= MAX_STACK_SIZE)
     {
         printf("Expression is too complex\n");
         exit(EXIT_FAILURE);
