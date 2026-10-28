@@ -21,7 +21,7 @@ If the stack overflows, the program will display the message Expression is too c
 #define MAX_STACK_SIZE 100
 
 int stack[MAX_STACK_SIZE];
-int top = -1;
+int top = 0;
 
 void push(int value) // Pushes a value onto the stack
 {
@@ -51,7 +51,7 @@ int main()
     while (true)
     {
         printf("Enter an RPN expression: ");
-        while (scanf(" %c", &ch) == 1)
+        while (scanf(" %c", &ch) == 1) // Read a character from input; reads until a non-whitespace character is found
         {
             if (ch >= '0' && ch <= '9')
             {
@@ -60,7 +60,7 @@ int main()
             else if (ch == '+' || ch == '-' || ch == '*' || ch == '/')
             {
                 operand2 = pop(); // Pop the second operand from the stack
-                operand1 = pop();
+                operand1 = pop(); // Pop the first operand from the stack
                 switch (ch)
                 {
                 case '+':
