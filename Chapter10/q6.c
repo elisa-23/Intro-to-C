@@ -55,7 +55,7 @@ int main()
         {
             if (ch >= '0' && ch <= '9')
             {
-                push(ch - '0'); // Convert char to int and push onto stack
+                push(ch - '0'); // Convert the character to an integer and push it onto the stack
             }
             else if (ch == '+' || ch == '-' || ch == '*' || ch == '/')
             {
@@ -86,7 +86,7 @@ int main()
             else if (ch == '=')
             {
                 printf("Value of expression: %d\n", pop());
-                top = -1;
+                top = 0; // Clear the stack
                 break;
             }
             else
